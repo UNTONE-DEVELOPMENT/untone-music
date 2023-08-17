@@ -1,0 +1,263 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    color: #222;
+    font-family: sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    --width: 70vw;
+}
+
+canvas[gradient-canvas] {
+    --gradient-color-2: #72C4F8;
+    --gradient-color-4: #72C4F8;
+    --gradient-color-1: #F55FCB;
+    --gradient-color-3: #907CFF;
+    width: 100%;
+    aspect-ratio: 1/1;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+body {
+    min-height: 100vh;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    padding: 0px calc((100vw - var(--width)) / 2);
+    display: flex;
+    align-items: center;
+}
+
+.footer {
+    padding: 30px calc((100vw - var(--width)) / 2);
+    width: 100%;
+    background-color: #222;
+    color: #ccc;
+    margin-top: auto;
+}
+.footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page {
+    width: var(--width);
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+h1 {
+    background: linear-gradient(134deg, #13AAFF 0%, #FE23B4 100%), #D9D9D9;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+p {
+    color: #222;
+    font-size: 20px;
+}
+
+h3 {
+    background: linear-gradient(0deg, #222 0%, #222 100%), linear-gradient(134deg, #13AAFF 0%, #FE23B4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.grid {
+    margin-top: 60px;
+    display: grid;
+    width: 100%;
+    grid-gap: 50px;
+    grid-template-columns: 2fr 3fr;
+}
+
+.artists-grid {
+    display: grid;
+    grid-gap: 12px 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.musics-grid {
+    display: grid;
+    grid-gap: 12px 30px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+
+.musics-grid,
+.artists-grid {
+    margin-top: 12px;
+}
+
+.artist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.artist img {
+    border-radius: 900px;
+    width: calc(100%);
+}
+
+.artist p {
+    color: #444;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+.music {
+
+    text-decoration: none;
+}
+
+.music img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.music small {
+    color: #666;
+}
+
+.artist p {
+    font-size: 17px;
+}
+
+.music p {
+    font-size: 17px;
+    margin-top: 5px;
+    margin-bottom: -4px;
+    line-height: 1.2;
+}
+
+.artist {
+    position: relative;
+}
+
+.artist:before,
+.artist:after {
+    aspect-ratio: 1/1;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: linear-gradient(134deg, #6AC9FF 0%, #FE67CB 100%), #D9D9D9;
+
+    z-index: -1;
+    transform: scale(0.96);
+    border-radius: 9000px;
+    ;
+    transition: all 0.2s ease;
+}
+
+.artist:hover:before {
+    transform: scale(1.05) rotate(180deg);
+}
+
+.artist:after {
+    opacity: 0;
+    filter: blur(10px);
+}
+
+.artist:hover:after {
+    transform: scale(1.05) rotate(180deg);
+    filter: blur(30px);
+    opacity: 1;
+}
+
+.music {
+    position: relative;
+}
+
+.music:before,
+.music:after {
+    aspect-ratio: 1/1;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: linear-gradient(134deg, #6AC9FF 0%, #FE67CB 100%), #D9D9D9;
+
+    z-index: -1;
+    transform: scale(0.96);
+    transition: all 0.2s ease;
+    border-radius: 12px;
+}
+
+.music:hover:before {
+    transform: scale(1.05);
+}
+
+.music:after {
+    opacity: 0;
+    filter: blur(10px);
+}
+
+.music:hover:after {
+    transform: scale(1.05);
+    filter: blur(30px);
+    opacity: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+    .artists-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .musics-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .artists-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .musics-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid {
+        grid-template-columns: 1fr 3fr;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .grid {
+        display: flex;
+        flex-direction: column-reverse ;
+    }
+
+    .artists-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .musics-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
