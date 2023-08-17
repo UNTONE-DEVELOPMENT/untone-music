@@ -32,8 +32,11 @@ $artists = [
 ];
 
 $albums = [
-    Album("Cubey's Adventures, Vol. 2 (Original Game Soundtrack)", "cubey2.png", "https://push.fm/fl/unt002", "DJ Stuiter, dusstuiter", "?"),
-    Album("Aurora / Dunes", "aurora_dunes.png", "https://push.fm/fl/unt001", "DJ Stuiter, Tanza", "?")
+    Album("lost within the depths of my mind", "unt005.png", "https://push.fm/fl/unt005", "kikoxc", "4 Aug 2023"),
+    Album("do you know what thats worth?", "unt004.png", "https://push.fm/fl/unt004", "kikoxc", "28 Jul 2023"),
+    Album("conasteeti", "conasteeti.png", "https://push.fm/fl/unt003", "DJ Stuiter", "21 Jul 2023"),
+    Album("Cubey's Adventures, Vol. 2 (Original Game Soundtrack)", "cubey2.png", "https://push.fm/fl/unt002", "DJ Stuiter, dusstuiter", "16 Jun 2023"),
+    Album("Aurora / Dunes", "aurora_dunes.png", "https://push.fm/fl/unt001", "DJ Stuiter, Tanza", "9 Jun 2023")
 ];
 
 ?>
